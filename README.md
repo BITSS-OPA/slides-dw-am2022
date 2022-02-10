@@ -1,3 +1,3 @@
-# DW OPA Talk at RT2
-[Slides](https://bitss-opa.github.io/slides-opa-dw-rt2/)
+# DW OPA Talk at AM
+[Slides](https://bitss-opa.github.io/slides-dw-am2022/)
 
