@@ -1,0 +1,467 @@
+---
+title: "An Open Policy Analysis for Deworming Interventions"
+subtitle: "BITSS Annual Meeting"
+author: "Fernando Hoces de la Guardia, BITSS"
+date:  "`r format(as.Date('2022-02-11'), '%d %B %Y')` | [slides](https://bitss-opa.github.io/slides-dw-am2022/#1)"
+output: 
+  
+  xaringan::moon_reader:
+    footer: "These slides available at https://bitss-opa.github.io/slides-dw-am2022/#1"
+    css: [default, metropolis, metropolis-fonts] 
+    lib_dir: libs
+    nature:
+      ratio: '16:9'
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+#      slideNumberFormat: |
+#          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+editor_options: 
+  chunk_output_type: console
+---
+
+
+<style>
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+pre.sourceCode {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+
+/*
+.remark-slide-number {
+  position: inherit;
+}
+
+.remark-slide-number .progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  display: block;
+  left: 0;
+  right: 0;
+}
+
+.remark-slide-number .progress-bar {
+  height: 100%;
+  background-color: blue;
+}
+*/
+</style>
+
+
+
+```{css, echo=FALSE}
+# CSS for including pauses in printed PDF output (see bottom of lecture)
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+
+```
+
+
+```{r setup, include=FALSE}
+options(knitr.duplicate.label = "allow")
+options(htmltools.dir.version = FALSE)
+library(knitr)
+opts_chunk$set(
+  fig.align="center",  
+  fig.height=4, #fig.width=6,
+  # out.width="748px", #out.length="520.75px",
+  dpi=300, #fig.path='Figs/',
+  cache=T ,#, 
+  echo=F #warning=F, message=F
+  )
+library(tidyverse)
+library(hrbrthemes)
+library(fontawesome)
+
+```
+
+
+
+# Structure of the Presentation
+
+<br><br><br><br>
+## - The case for transparency in policy analysis
+
+## - An application of the Open Policy Analysis framework into a deworming intervention policy  
+
+---
+background-image: url("Images/clean_pa.svg")
+background-size: 60%
+background-position: 100% 20%
+# Ideal Policy Analysis Report 
+
+.pull-left[
+.font140[
+<br>
+- Developed to inform a specific policy debate
+
+- Main populations are clearly identified
+
+- Costs and benefits are measured for each population
+
+- All policy estimates are in comparable units
+
+]
+]
+---
+background-image: url("Images/diff_units_pa.svg"), url("Images/alt_fact1_pa.svg"), url("Images/alt_fact2_pa.svg")
+background-size: 50%, 30%, 30%
+background-position: 0% 50%, 85% 30%, 85% 105%
+
+# Departures From the Ideal Analysis 
+
+.pull-left[
+.font120[
+- Non-comparable reports
+
+<br><br><br><br><br><br><br><br><br><br><br>
+Examples: 
+]
+]
+
+.pull-right[
+.font120[
+- Dueling Certitudes/Report Wars (Manski 2013, Wesselink et al, 2013)
+
+]
+]
+
+
+
+---
+count: true
+background-image: url("Images/senator1.png"), url("Images/senator2.png")
+background-size: 300px, 300px
+background-position: 15% 90%, 80% 5%   
+# Policy makers can pick their own analysis
+
+
+<!--
+<br>
+<iframe width="360" height="250" src="https://www.youtube.com/embed/rV_YxKOE90g?start=188" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+
+.pull-left[
+*Senator 1 [discussing facts](https://www.youtube.com/embed/rV_YxKOE90g?start=188) on <br>
+ unemployment insurance* <br> 
+
+*Interviewer:* “We I have looked at<br> 
+ what economist are saying, and [...] <br>there is no measurable evidence that people are staying at home because of [$600 unemp. insurance]” 
+
+*Senator1:* “[scoffs] I don’t know which economist you are talking about, but ...” 
+]
+.pull-right[
+<br><br><br><br><br><br><br><br>
+*Senator 2 [discussing facts](https://youtu.be/_uy8D7MXSYo?t=364) <br>
+on costs of healthcare reform*  
+
+*Senator2:* “...I don’t think there is a <br> 
+study out there that does not <br> 
+suggest suggests that [proposed <br> reform] is far less expensive than [status quo]"
+]
+
+---
+count: true
+background-image: url("Images/ideal_ebp.svg")
+background-size: contain
+# What's wrong with the Evidence-to-Policy Pipepline?
+.center[
+.font140[Ideal connection between research and policy analysis]
+]
+---
+count: true
+background-image: url("Images/pre-cred-ebp.svg")
+background-size: 80%
+background-position: 50% 110%
+
+# What's wrong with the Evidence-to-Policy Pipepline?
+.center[
+.font140[**Pre-Credibility** -- Cred. Revo. (1990s) -- Open Science+ (2010s) -->]
+]
+---
+count: true
+background-image: url("Images/pre-open-sci.svg")
+background-size: 80%
+background-position: 50% 110%
+
+# What's wrong with the Evidence-to-Policy Pipepline?
+.center[
+.font140[Pre-Credibility -- **Cred. Revo. (1990s)** -- Open Science+ (2010s) -->]
+]
+---
+count: true
+background-image: url("Images/pre-opa.svg")
+background-size: 80%
+background-position: 50% 110%
+
+# What's wrong with the Evidence-to-Policy Pipepline?
+.center[
+.font140[Pre-Credibility -- Cred. Revo. (1990s) -- **Open Science+ (2010s)** -->]
+]
+---
+count: false
+background-image: url("Images/pre-opa-gaps.svg")
+background-size: 80%
+background-position: 50% 110%
+
+# What's wrong with the Evidence-to-Policy Pipepline?
+.center[
+.font140[Pre-Credibility -- Cred. Revo. (1990s) -- **Open Science+ (2010s)** -->]
+]
+
+
+---
+background-image: url(Images/opa_framework.png)
+background-size: contain
+background-position: 50% 10%
+count:true
+  
+# Our Proposal: A Framework for Open Policy Analysis
+.pull-left[
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+Hoces de la Guardia,  
+Grant, Miguel ([2021](https://academic.oup.com/spp/advance-article/doi/10.1093/scipol/scaa067/6018524?guestAccessKey=ac30d681-5391-4f91-b4d8-44c6aed11161))
+]
+
+<!--
+ADD SLIDE ON HOW OPA IS MAINLY ABOUT IMPROVING DOCUMENTATION 
+-->
+---
+background-image: url(Images/one-layer/output1.png), url(Images/one-layer/analysis.png), url(Images/one-layer/materials.png)  
+background-size: 10%, 10%, 10%
+background-position: 63% 15%, 78% 15%, 93% 15%
+count: true
+# Application to Deworming Interventions   
+.pull-left[
+## Policy issue and proposed policy 
+- Parasitic worm infections are endemic in many LMICs
+- Decrease nutrient uptake and can thus lead to serious consequences on human health  
+- Analyze Policy of mass deworming interventions, at school level
+
+## Extrapolating from research 
+- Findings come from intervention in Kenya in 1998-99 (Miguel and Kremer 2004, Baird et. al. 2016, Hamory et. al. 2020) 
+- Current settings around the world vary in prevalence rates, implementation costs, and length of treatments
+]
+
+.pull-right[
+.center[.font150[
+[DEMO:](http://www.bitss.org/opa/projects/deworming/)
+<br><br>
+]]
+
+ &nbsp; &nbsp; &nbsp; &nbsp;  [Open Output](https://bitss-opa.shinyapps.io/dw-app/)  &nbsp; &nbsp; &nbsp; &nbsp;  [Open Analysis](https://bitss-opa.github.io/opa-deworming/) &nbsp; &nbsp; &nbsp; &nbsp;  [Open Materials](https://github.com/BITSS-OPA/opa-deworming)
+ 
+ .right[ [(backup slides)](#offline-demo) ]
+## Contributions of OPA to deworming:  
+  1. Selected one policy estimate among several alternatives and establish a clear link between it and underlying assumptions 
+  2. Added documentation to increase reproducibility 
+  3. Created a public repository with all materials for one-click reproducibility 
+]
+
+  
+---
+count: true
+
+# Barriers to scaling-up: Incentives, incentives, incentives
+
+.font120[
+No single agent/stakeholder has incentives to individually increase transparency. 
+
+**Policy Markers:**
+ - Better off having a menu of reports.
+
+**Policy Analysts:**
+ - Constantly putting down fires, no time to thoroughly improve documentation.
+ - Opacity in policy analysis increases the value of reputation. Hence, high credentialed analysts have 
+ the negative incentives to increase transparency.
+ 
+**Researchers:** 
+  - Incentive to generate novel and rigorous findings trumps everything else. 
+  - No incentive to increase the rigor of extrapolation exercises ("quick and dirty", "back of the envelope")
+  - Widespread contempt from academia to policy analysis. 
+]
+---
+count: true
+
+# Next Steps for OPA
+
+<br>
+.font120[
+## Dewroming OPA v2.0
+- Incorporate intergenerational effect on children mortality
+
+## Unemployment Insurance OPA v0.3 (w/BIFYA)
+- Review and improve Open Materials component
+
+## Promote transparency in policy analysis
+- Find and support policy entrepreneurs for transparency in policy analysis (e.g. Santiago Levy for Impact Evaluations) 
+
+]
+
+---
+class: inverse, center, middle
+count:false
+# .font140[ Thank You]
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=100%></html>
+
+.font190[
+<openpolicy@berkeley.edu>
+]
+---
+class: inverse, center, middle
+count:false
+# .font140[ Back-up Slides]
+
+---
+background-image: url(Images/dw-open-out1.png), url(Images/dw-open-out2.png), url(Images/dw-open-out3.png), url(Images/one-layer/output1and2.png)  
+background-size: 500px, 500px, 500px, 120px
+background-position: 100% 80%, 70% 40%, 40% 0%, 18% 11%
+count: false
+name:offline-demo
+# Open Output
+
+.pull-left[
+## [Demo](https://bitss-opa.shinyapps.io/dw-app/)
+
+<br>
+## Main features
+- One clear output  
+previously agreed in   
+consultation with  
+policy partner
+- Two additional tabs to modify assumptions  
+(key assumptions and all assumptions)
+- Each source is classified into research,   
+data, or guesswork
+- High level equations added to illustrate location of components
+- Added feature to modify standard deviations
+- Track values of each component
+
+
+]
+
+---
+background-image: url(Images/dw-open-an2.png), url(Images/dw-open-an1.png),  url(Images/one-layer/analysis.png)   
+background-size: 400px, 400px, 200px
+background-position: 100% 100%, 70% 0%, 15% 5%
+count: false
+# Open Analysis
+.pull-left[
+## [Demo](https://bitss-opa.github.io/opa-deworming/)
+<br>
+## Main features
+- Complete narrative description of the methodology
+- Translation of each narrative step into an equation
+- Implementation of each equation into code
+- Combine all of the above into using a dynamic document (RMarkdown)
+- Presentation of narrative, equations, and code in layered fashion to avoid overwhelming the reader
+Icon figure  
+
+]
+
+---
+background-image: url(Images/dw-open-mat2.png), url(Images/dw-open-mat1.png),  url(Images/one-layer/materials.png)   
+background-size: 600px, 600px, 200px
+background-position: 100% 100%, 70% 0%, 15% 5%
+count: false
+# Open Materials
+
+.pull-left[
+## [Demo](https://github.com/BITSS-OPA/opa-deworming)
+<br>
+## Main features
+- One-click reproducible   
+documentation and app
+- Extensive readme files
+- Clear folder structure
+- Version controlled
+- Open data
+- Acknowledgment to all contributors
+
+]
+
+
+---
+background-image: url(Images/dw-nopen-out2.png), url(Images/dw-nopen-out3.png)
+background-size: 800px, 800px
+background-position: 90% 00%, 90% 100%
+count: false
+# What happens if one principle fails: Opaque Output
+
+.pull-left[
+- Policy estimates of approach 2   
+of deworming (Baird et al, 2016)
+- Assume Open Analysis and   
+Open Materials
+- Good for researchers 
+- Unclear for policy analysts
+- Allows policy makers to  
+cherry pick results
+- Does not disclose uncertainty
+- Unclear separation of roles  
+between policy analyst and   
+policy maker (Truman's request  
+for a "one-handed" economist)
+]
+
+
+---
+background-image: url(Images/no-opaque-link2.png), url(Images/yes-opaque-link.png), url(Images/OPA_opaque_layers.svg)
+background-size: 450px, 450px, 150px
+background-position: 20% 100%, 80% 100%, 100% 0%
+count:false
+# .font90[What If The Policy Analysis Does Not Have Open Output?]
+- Two fictitious policy analyses 
+- The connection between all assumptions and final output has been hidden
+- Both claim to report on the same fact (policy estimate). Code is available, reproducible, and each as an interactive app and dynamic document. 
+- Wildly different results by choosing a different policy approach (and not reporting)
+
+
+---
+background-image: url(Images/no-opaque-analysis.png), url(Images/yes-opaque-analysis.png), url(Images/opaque-analysis-logo.svg)
+background-size: 550px, 550px, 150px
+background-position: 10% 100%, 90% 85%, 100% 0%
+count:false
+# .font90[What If It Does Not Have Open Analysis?]
+- Two fictitious policy analyses 
+- The connection between all assumptions and final output has been hidden
+- Both claim to report on the same fact (policy estimate). Code is available, reproducible, and each as an interactive app. 
+- Wildly different results by slightly modifying the underlying assumptions in the desired direction
+
+
+---
+count: false
+
+# Opaque Analysis/Materials
+<br>
+.font140[
+-  Assume open output and open materials  
+-  In this scenario we can have two policy analyses: one from advocates and one from opponents
+-  Each analysis can claim to be open source. Code is available, reproducible, and each as an interactive app. 
+-  But each analysis can bury in their code analytical choices that move the final policy estimate in their favor
+-  Same though exercise can be done with opaque materials
+]
+
+
+```{r gen_pdf, include = FALSE, cache = FALSE, eval = FALSE}
+pagedown::chrome_print("index.html", "slides.pdf" )
+
+```
