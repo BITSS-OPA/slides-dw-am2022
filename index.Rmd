@@ -1,5 +1,5 @@
 ---
-title: "An Open Policy Analysis for Deworming Interventions"
+title: "Transparency for Policy Analysis: An Application to Deworming Interventions"
 subtitle: "BITSS Annual Meeting"
 author: "Fernando Hoces de la Guardia, BITSS"
 date:  "`r format(as.Date('2022-02-11'), '%d %B %Y')` | [slides](https://bitss-opa.github.io/slides-dw-am2022/#1)"
@@ -109,7 +109,7 @@ background-position: 100% 20%
 .pull-left[
 .font140[
 <br>
-- Developed to inform a specific policy debate
+- Developed to inform a specific, prospective, policy debate
 
 - Main populations are clearly identified
 
@@ -180,7 +180,7 @@ suggest suggests that [proposed <br> reform] is far less expensive than [status 
 count: true
 background-image: url("Images/ideal_ebp.svg")
 background-size: contain
-# What's wrong with the Evidence-to-Policy Pipepline?
+# What's wrong with the Evidence-to-Policy Pipeline?
 .center[
 .font140[Ideal connection between research and policy analysis]
 ]
@@ -190,7 +190,7 @@ background-image: url("Images/pre-cred-ebp.svg")
 background-size: 80%
 background-position: 50% 110%
 
-# What's wrong with the Evidence-to-Policy Pipepline?
+# What's wrong with the Evidence-to-Policy Pipeline?
 .center[
 .font140[**Pre-Credibility** -- Cred. Revo. (1990s) -- Open Science+ (2010s) -->]
 ]
@@ -200,7 +200,7 @@ background-image: url("Images/pre-open-sci.svg")
 background-size: 80%
 background-position: 50% 110%
 
-# What's wrong with the Evidence-to-Policy Pipepline?
+# What's wrong with the Evidence-to-Policy Pipeline?
 .center[
 .font140[Pre-Credibility -- **Cred. Revo. (1990s)** -- Open Science+ (2010s) -->]
 ]
@@ -210,7 +210,7 @@ background-image: url("Images/pre-opa.svg")
 background-size: 80%
 background-position: 50% 110%
 
-# What's wrong with the Evidence-to-Policy Pipepline?
+# What's wrong with the Evidence-to-Policy Pipeline?
 .center[
 .font140[Pre-Credibility -- Cred. Revo. (1990s) -- **Open Science+ (2010s)** -->]
 ]
@@ -220,7 +220,7 @@ background-image: url("Images/pre-opa-gaps.svg")
 background-size: 80%
 background-position: 50% 110%
 
-# What's wrong with the Evidence-to-Policy Pipepline?
+# What's wrong with the Evidence-to-Policy Pipeline?
 .center[
 .font140[Pre-Credibility -- Cred. Revo. (1990s) -- **Open Science+ (2010s)** -->]
 ]
@@ -251,8 +251,8 @@ count: true
 .pull-left[
 ## Policy issue and proposed policy 
 - Parasitic worm infections are endemic in many LMICs
-- Decrease nutrient uptake and can thus lead to serious consequences on human health  
-- Analyze Policy of mass deworming interventions, at school level
+- Decrease nutrient uptake and can lead to serious consequences on human health  
+- Analyze policy of mass deworming interventions, at school level
 
 ## Extrapolating from research 
 - Findings come from intervention in Kenya in 1998-99 (Miguel and Kremer 2004, Baird et. al. 2016, Hamory et. al. 2020) 
@@ -289,7 +289,7 @@ No single agent/stakeholder has incentives to individually increase transparency
 **Policy Analysts:**
  - Constantly putting down fires, no time to thoroughly improve documentation.
  - Opacity in policy analysis increases the value of reputation. Hence, high credentialed analysts have 
- the negative incentives to increase transparency.
+  negative incentives to increase transparency.
  
 **Researchers:** 
   - Incentive to generate novel and rigorous findings trumps everything else. 
@@ -303,7 +303,7 @@ count: true
 
 <br>
 .font120[
-## Dewroming OPA v2.0
+## Deworming OPA v2.0
 - Incorporate intergenerational effect on children mortality
 
 ## Unemployment Insurance OPA v0.3 (w/BIFYA)
@@ -398,13 +398,23 @@ documentation and app
 
 ]
 
+---
+background-image: url(Images/no-opaque-link2.png), url(Images/yes-opaque-link.png), url(Images/OPA_opaque_layers.svg)
+background-size: 450px, 450px, 150px
+background-position: 20% 100%, 80% 100%, 100% 0%
+count:false
+# .font90[What If The Policy Analysis Does Not Have Open Output?]
+- Two fictitious policy analyses 
+- The connection between all assumptions and final output has been hidden
+- Both claim to report on the same fact (policy estimate). Code is available, reproducible, and each as an interactive app and dynamic document. 
+- Wildly different results by choosing a different policy approach (and not reporting)
 
 ---
 background-image: url(Images/dw-nopen-out2.png), url(Images/dw-nopen-out3.png)
 background-size: 800px, 800px
 background-position: 90% 00%, 90% 100%
 count: false
-# What happens if one principle fails: Opaque Output
+# Opaque Output: Example #2
 
 .pull-left[
 - Policy estimates of approach 2   
@@ -421,18 +431,6 @@ between policy analyst and
 policy maker (Truman's request  
 for a "one-handed" economist)
 ]
-
-
----
-background-image: url(Images/no-opaque-link2.png), url(Images/yes-opaque-link.png), url(Images/OPA_opaque_layers.svg)
-background-size: 450px, 450px, 150px
-background-position: 20% 100%, 80% 100%, 100% 0%
-count:false
-# .font90[What If The Policy Analysis Does Not Have Open Output?]
-- Two fictitious policy analyses 
-- The connection between all assumptions and final output has been hidden
-- Both claim to report on the same fact (policy estimate). Code is available, reproducible, and each as an interactive app and dynamic document. 
-- Wildly different results by choosing a different policy approach (and not reporting)
 
 
 ---
@@ -457,7 +455,7 @@ count: false
 -  In this scenario we can have two policy analyses: one from advocates and one from opponents
 -  Each analysis can claim to be open source. Code is available, reproducible, and each as an interactive app. 
 -  But each analysis can bury in their code analytical choices that move the final policy estimate in their favor
--  Same though exercise can be done with opaque materials
+-  Same thought exercise can be done with opaque materials
 ]
 
 
