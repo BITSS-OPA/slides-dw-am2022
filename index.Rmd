@@ -2,7 +2,7 @@
 title: "Transparency for Policy Analysis: An Application to Deworming Interventions"
 subtitle: "BITSS Annual Meeting"
 author: "Fernando Hoces de la Guardia, BITSS"
-date:  "`r format(as.Date('2022-02-11'), '%d %B %Y')` | [slides](https://bitss-opa.github.io/slides-dw-am2022/#1)"
+date:  "`r format(as.Date('2022-02-11'), '%d %B %Y')` | [slides](https://bitss-opa.github.io/slides-dw-am2022/#1) and  [presentation](https://www.youtube.com/watch?v=fNbtOMLR8eQ)"
 output: 
   
   xaringan::moon_reader:
